@@ -1,0 +1,120 @@
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ccc;
+}
+
+.router-link {
+  color: white;
+  text-decoration-line: none;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.router-link:hover {
+  transition: 300ms;
+  opacity: 0.7;
+}
+
+.row-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-between-start {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-end-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.row-start-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.row-center-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-between-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-end-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.column-start-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column-start-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.column-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-text {
+  color: #888888;
+  font-size: 1rem;
+  display: block;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+
+}
+
+h3:first-child {
+  margin-top: 0;
+}
+
+.prism-editor-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+
+  /* we dont use `language-` classes anymore so thats why we need to add background and text color manually */
+  background: #2d2d2d;
+  color: #ccc;
+
+  /* you must provide font-family font-size line-height. Example: */
+  font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
+  font-size: 0.85rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 2;
+  box-sizing: border-box;
+}
