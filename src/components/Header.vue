@@ -1,24 +1,34 @@
 <script setup lang="ts">
 import { Menu } from '@element-plus/icons-vue'
 import { isPhone } from "../common/public"
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+const path = ref(router.currentRoute.value.fullPath)
+
 </script>
 
 <template>
   <div class="header row-between-center" :class="isPhone ? 'header-phone' : 'header-pc'">
 
-    <RouterLink class="router-link row-start-center" to="/index">
+    <RouterLink class="router-link row-start-center" :to="path.includes('index') ? '' : '/index'">
       <img class="header-left-img" src="../assets/svg/logo.svg" alt="">
       <span class="header-left-text">Tesla的练习册</span>
     </RouterLink>
 
     <div v-show="!isPhone" class="header-right row-end-center">
-      <RouterLink class="router-link nav row-start-center" to="/index">首页</RouterLink>
-      <RouterLink class="router-link nav row-start-center" to="/train">练习项目</RouterLink>
+      <RouterLink class="router-link nav row-start-center" :to="path.includes('index') ? '' : '/index'"
+        :class="path == '/index' ? 'hover' : 'default'">首页
+      </RouterLink>
+      <RouterLink class="router-link nav row-start-center" :to="path.includes('train') ? '' : '/train'"
+        :class="path.includes('train') ? 'hover' : 'default'">练习项目
+      </RouterLink>
     </div>
 
-    <RouterLink v-show="isPhone" to="/menu" class="header-right row-center-center router-link">
+    <div v-show="isPhone" to="/menu" class="header-right row-center-center router-link">
       <Menu class="icon"></Menu>
-    </RouterLink>
+    </div>
 
 
 
@@ -37,6 +47,20 @@ import { isPhone } from "../common/public"
   height: 4rem;
   box-sizing: border-box;
   background-color: #303133;
+}
+
+.hover {
+  color: #409EFF;
+}
+
+.default {
+  color: white;
+  transition: 300ms;
+}
+
+.default:hover {
+  transition: 300ms;
+  opacity: 0.7;
 }
 
 .header-phone {

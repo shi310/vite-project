@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, ref } from 'vue'
 
 import './assets/css/reset.css' //reset样式
 import './assets/css/style.css' //全局样式
@@ -15,6 +15,8 @@ import VueAxios from 'vue-axios' //vue-axios
 
 
 const app = createApp(App)
+
+// app.config.globalProperties.$headerIndex = ref(0)
 
 app.use(Router)
 app.use(ElementPlus)

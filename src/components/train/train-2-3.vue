@@ -126,7 +126,7 @@ const code = 'const name = computed(()=>{\n     return var1.value -- var2.value\
     <el-button class="button" @click="read" type="primary">读取</el-button>
     <prism-editor v-model="jsCode2" :highlight="jsCodeLight2" line-numbers></prism-editor>
     <span class="second-text margin-bottom">例子: 请输入你的投注金额: {{ doman }} 元</span>
-    <div>
+    <div ref="dom">
         <el-button @click="add($event)" type="primary">+10</el-button>
         <el-button @click="add($event)" type="primary">+20</el-button>
         <el-button @click="add($event)" type="primary">+50</el-button>

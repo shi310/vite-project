@@ -10,10 +10,10 @@ useRouter().push('/train/1-1')
 
 
 const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
+    // console.log(key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
+    // console.log(key, keyPath)
 }
 
 
@@ -34,7 +34,7 @@ const handleClose = (key: string, keyPath: string[]) => {
                         </el-icon>
                         <span>搭建</span>
                     </template>
-                    <el-menu-item index="1-1">环境搭建</el-menu-item>
+                    <el-menu-item index="1-1">1-1: 环境搭建</el-menu-item>
                 </el-sub-menu>
                 <el-sub-menu index="2">
                     <template #title>
@@ -43,11 +43,11 @@ const handleClose = (key: string, keyPath: string[]) => {
                         </el-icon>
                         <p>Vue指令</p>
                     </template>
-                    <el-menu-item index="2-1">vue指令</el-menu-item>
-                    <el-menu-item index="2-2">论坛审核</el-menu-item>
-                    <el-menu-item index="2-3">Ref全家桶</el-menu-item>
-                    <el-menu-item index="2-4">Computed计算</el-menu-item>
-                    <el-menu-item index="2-5">Watch侦听器</el-menu-item>
+                    <el-menu-item index="2-1">2-1: vue指令</el-menu-item>
+                    <el-menu-item index="2-2">2-2: 论坛审核</el-menu-item>
+                    <el-menu-item index="2-3">2-3: Ref全家桶</el-menu-item>
+                    <el-menu-item index="2-4">2-4: Computed计算</el-menu-item>
+                    <el-menu-item index="2-5">2-5: Watch侦听器</el-menu-item>
 
                 </el-sub-menu>
             </el-menu>

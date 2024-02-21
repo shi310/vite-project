@@ -1,7 +1,29 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+// 插入代码块
+import { PrismEditor } from "vue-prism-editor";
+import prism from "prismjs";
+
+const jsCodeList1: string[] = [
+    "const message: string = '我是真男人'",
+    "const htmlValue: string = '<p>例: --> + {{ message }}</p>'",
+]
+const jsCode1 = jsCodeList1.join('\n')
+const jsCodeLight1 = (code: string) => {
+    return prism.highlight(code, prism.languages.javascript, 'javascript');
+};
+
+const jsCodeList2: string[] = [
+    "<h3>v-text = 'message' 等同于 { { message } } </h3>",
+    "<p class='second - text' v-text='' 例: --> ' + message'></p>"
+]
+const jsCode2 = jsCodeList2.join('\n')
+const jsCodeLight2 = (code: string) => {
+    return prism.highlight(code, prism.languages.html, 'html');
+};
+
 const message: string = '我是真男人'
-const htmlValue: string = "<p>例: --> + {{ message }}</p>"
+const htmlValue: string = "<h1 style='color:red' >例: --> + {{ message }}</h1>"
 const flag = ref(1)
 const inputText1 = ref('0')
 const inputText2 = ref('0')
@@ -84,10 +106,11 @@ const reduceForNumber2 = () => {
     <div>
         <h3>v-text = "message" 等同于 { { message } } </h3>
         <p class="second-text" v-text="'例: --> ' + message"></p>
-
+        <prism-editor v-model="jsCode1" :highlight="jsCodeLight1" line-numbers></prism-editor>
+        <prism-editor v-model="jsCode2" :highlight="jsCodeLight2" line-numbers></prism-editor>
 
         <h3>v-html 富文本格式 </h3>
-        <p class="second-text" v-html="htmlValue"></p>
+        <p v-html="htmlValue"></p>
 
 
         <h3>v-if 控制组件是否渲染, 资源损耗较大</h3>
